@@ -1,8 +1,8 @@
 app:
   serviceName: chatbot
-  serviceUrl: chatbot.putianxia.top
-  cookieDomain: ".putianxia.top"
-  allowOrigin: "http://chatbot.putianxia.top:8000"
+  serviceUrl: chatbot.putianxia.fun
+  cookieDomain: ".putianxia.fun"
+  allowOrigin: "https://chatbot.putianxia.fun"
   loginCookieDuration: 86400
 logger:
   level: info # 日志级别 debug/info/warn/error/dpanic/panic/fatal

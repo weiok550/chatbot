@@ -203,8 +203,10 @@ export default {
     async fetchChatRecords(up) {
       try {
         this.data.canFetchMore = false;
+        console.log('111111111111');
+        console.log(process.env)
         const response = await fetch(
-          `http://chatbot.putianxia.top:8080/api/chat/getChatRecords?start=${this.data.index}`,
+          `${process.env.VUE_APP_DOMAIN}/api/chat/getChatRecords?start=${this.data.index}`,
           {
             credentials: "include",
           }
@@ -274,7 +276,7 @@ export default {
 
       try {
         const response = await fetch(
-          "http://chatbot.putianxia.top:8080/api/chat/chat",
+          process.env.VUE_APP_DOMAIN+"/api/chat/chat",
           {
             credentials: "include",
             method: "POST",

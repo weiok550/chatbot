@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     login() {
-      axios.post('http://chatbot.putianxia.top:8080/api/public/login', {
+      axios.post(process.env.VUE_APP_DOMAIN+'/api/public/login', {
         username: this.username,
         password: this.password
       }, {

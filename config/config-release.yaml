@@ -1,0 +1,43 @@
+app:
+  serviceName: chatbot
+  serviceUrl: chatbot.putianxia.top
+  cookieDomain: ".putianxia.top"
+  allowOrigin: "http://chatbot.putianxia.top:8000"
+  loginCookieDuration: 86400
+logger:
+  level: info # 日志级别 debug/info/warn/error/dpanic/panic/fatal
+  filename: "logs/service.log" # 日志文件路径
+  maxSize: 100 # 每个日志文件保存的最大尺寸 单位：M
+  maxBackups: 1 # 日志文件最多保存多少个备份
+  maxAge: 10 # 文件最多保存多少天
+  compress: true # 是否压缩
+user:
+  loginTokenSecret: "&sgkf-*&d@9983a55~"
+  accounts:
+    - username: "neo1"
+      password: "123456"
+      userid: 1
+    - username: "neo2"
+      password: "654321"
+      userid: 2
+redis:
+  user:
+    Addr: "localhost:6379"
+    Password:     ""
+    DialTimeout:  2
+    ReadTimeout:  1
+    WriteTimeout: 1
+    PoolSize:     10  # 最大连接数
+    MinIdleConns: 5   # 最小空闲连接数
+    PoolTimeout:  4   # 连接池慢的情况下最长等待几秒就不再尝试连接
+    IdleTimeout:  4   # 空闲连接最长几分钟后自动关闭
+
+mysql:
+  account:
+    user: root
+    password: "234567"
+    addr: "127.0.0.1:3306"
+    database: "account"
+    charset: "utf8mb4"
+openai:
+  secretKey: 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

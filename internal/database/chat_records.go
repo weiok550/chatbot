@@ -3,6 +3,7 @@ package database
 import (
 	"chatbot/internal/config/global"
 	"chatbot/pkg/utils"
+	"errors"
 	"fmt"
 )
 
@@ -30,25 +31,37 @@ func getTableName(userID uint32) string {
 }
 
 func (s *ChatRecordService) CreateChatRecord(record ChatRecord) error {
-	db := GetDB("account")
+	db := GetDB("chatbot")
+	if db == nil {
+		return errors.New("数据库连接失败：chatbot")
+	}
 	tableName := getTableName(record.UserID)
 	return db.Table(tableName).Create(&record).Error
 }
 
 func (s *ChatRecordService) DeleteChatRecord(userID uint32, id uint64) error {
-	db := GetDB("account")
+	db := GetDB("chatbot")
+	if db == nil {
+		return errors.New("数据库连接失败：chatbot")
+	}
 	tableName := getTableName(userID)
 	return db.Table(tableName).Delete(&ChatRecord{}, id).Error
 }
 
 func (s *ChatRecordService) UpdateChatRecord(record ChatRecord) error {
-	db := GetDB("account")
+	db := GetDB("chatbot")
+	if db == nil {
+		return errors.New("数据库连接失败：chatbot")
+	}
 	tableName := getTableName(record.UserID)
 	return db.Table(tableName).Save(&record).Error
 }
 
 func (s *ChatRecordService) GetChatRecord(id uint64) (*ChatRecord, error) {
-	db := GetDB("account")
+	db := GetDB("chatbot")
+	if db == nil {
+		return nil, errors.New("数据库连接失败：chatbot")
+	}
 	var record ChatRecord
 	tableName := getTableName(record.UserID)
 	err := db.Table(tableName).First(&record, id).Error
@@ -60,8 +73,11 @@ func (s *ChatRecordService) GetChatRecord(id uint64) (*ChatRecord, error) {
 
 // 分页从新到旧查询某个用户相关的聊天记录，index 为上次查询的最小created_at, 这样查询可以减少检索rows提升查询性能
 func (s *ChatRecordService) GetChatRecordsByPage(userID uint32, fields string, pageSize int, index uint64) ([]ChatRecord, error) {
-	db := GetDB("account")
+	db := GetDB("chatbot")
 	var records []ChatRecord
+	if db == nil {
+		return records, errors.New("数据库连接失败：chatbot")
+	}
 	tableName := getTableName(userID)
 
 	var err error

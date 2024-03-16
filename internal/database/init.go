@@ -41,5 +41,8 @@ func init() {
 }
 
 func GetDB(biz string) *gorm.DB {
-	return dbs[biz]
+	if conn,ok := dbs[biz]; ok {
+		return conn
+	}
+	return nil
 }

@@ -15,6 +15,8 @@ func init() {
 	var configFile string
 	var env string
 	envPtr := flag.String("env", "prod", "program run env mode")
+	flag.Parse()
+	fmt.Printf("当前env:%s", *envPtr)
 	switch *envPtr {
 	case "debug":
 	case "test":
@@ -42,6 +44,7 @@ func init() {
 
 		// 重新读取配置文件
 		err := Cfg.ReadInConfig()
+		global.Cfg = Cfg
 		if err != nil {
 			fmt.Println("Error reading config file:", err)
 		}

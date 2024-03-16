@@ -40,4 +40,4 @@ mysql:
     database: "chatbot"
     charset: "utf8mb4"
 openai:
-  secretKey: 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
+  secretKey: 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

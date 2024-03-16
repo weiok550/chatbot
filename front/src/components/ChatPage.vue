@@ -116,7 +116,7 @@
               </div>
             </div>
           </div>
-          <div class="card-footer mt-3">
+          <div class="card-footer mt-3" style="margin-bottom:100px">
             <div class="input-group input-group-flat">
               <textarea
                 id="sendMsgBox"

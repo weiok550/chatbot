@@ -68,7 +68,7 @@
 - todo
 
 ## 线上体验
-- https://chatbot.putianxia.fun/login
+- https://chatbot.putianxia.fun
 - 用户名:neo1 密码:123456
 
 ## 附件[作业要求]

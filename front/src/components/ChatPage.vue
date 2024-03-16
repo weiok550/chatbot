@@ -245,11 +245,6 @@ export default {
       }
     },
   },
-  unmounted() {
-    const element = document.querySelector(".card-body");
-    element.removeEventListener("scroll", this.handleScroll);
-  },
-
   setup() {
     const sendMsgBox = ref(null);
     const chatData = reactive({
@@ -335,7 +330,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 800px;
   height: 100vh;
 }
 </style>

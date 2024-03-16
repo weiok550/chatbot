@@ -1,8 +1,9 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-12 chatbox">
-        <div class="col-12 col-lg-7 col-xl-9 d-flex flex-column">
+      <div class="col-2"></div>
+      <div class="col-8 chatbox">
+        <div class="col-11 d-flex flex-column">
           <div class="card-body scrollable" style="height: 49rem">
             <div class="chat">
               <div class="chat-bubbles">
@@ -116,7 +117,7 @@
               </div>
             </div>
           </div>
-          <div class="card-footer mt-3" style="margin-bottom:100px">
+          <div class="card-footer mt-3 sticky-bottom" >
             <div class="input-group input-group-flat">
               <textarea
                 id="sendMsgBox"
@@ -160,6 +161,7 @@
           </div>
         </div>
       </div>
+      <div class="col-2"></div>
     </div>
   </div>
 </template>
@@ -203,8 +205,6 @@ export default {
     async fetchChatRecords(up) {
       try {
         this.data.canFetchMore = false;
-        console.log('111111111111');
-        console.log(process.env)
         const response = await fetch(
           `${process.env.VUE_APP_DOMAIN}/api/chat/getChatRecords?start=${this.data.index}`,
           {
@@ -228,11 +228,10 @@ export default {
           this.data.canFetchMore = true;
         }
 
-        console.log(up);
-        // setTimeout(() => {
-        //   const element = document.querySelector(".card-body");
-        //   element.scrollTop = up == 1 ? 0 : element.scrollHeight;
-        // }, 1000);
+        setTimeout(() => {
+          const element = document.querySelector(".card-body");
+          element.scrollTop = up == 1 ? 0 : element.scrollHeight;
+        }, 1000);
       } catch (error) {
         console.error("Error fetching chat records:", error);
         // Handle error here, e.g., show a message to the user
@@ -256,7 +255,6 @@ export default {
     const sendMessage = async () => {
       const message = sendMsgBox.value.value.trim();
 
-      console.log("sendMsg:----" + message);
       if (message === "") {
         sendMsgBox.value.value = "";
         return;
@@ -330,6 +328,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 20px;
   height: 100vh;
 }
 </style>

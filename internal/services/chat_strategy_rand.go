@@ -16,7 +16,7 @@ func (cs ChatStrategyRand) ChooseBot(userId uint32, receiveMsg string) interface
 	// 生成一个0到9之间的随机整数
 	num := randomGenerator.Intn(10)
 
-	if num < 4 {
+	if num < 3 {
 		chatBot = new(ChatbotMock)
 	} else {
 		chatBot = new(ChatbotGpt)

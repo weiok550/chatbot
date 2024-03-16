@@ -4,4 +4,4 @@
 .DS_Store
 *.log
 *.lock
-config/config-release.yaml
+./config/config-*.yaml

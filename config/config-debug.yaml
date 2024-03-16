@@ -33,11 +33,11 @@ redis:
     IdleTimeout:  4   # 空闲连接最长几分钟后自动关闭
 
 mysql:
-  account:
+  chatbot:
     user: root
     password: "234567"
     addr: "127.0.0.1:3306"
-    database: "account"
+    database: "chatbot"
     charset: "utf8mb4"
 openai:
-  secretKey: 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
+  secretKey: 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

@@ -20,6 +20,9 @@ user:
     - username: "neo2"
       password: "654321"
       userid: 2
+    - username: "neo3"
+      password: "123456"
+      userid: 2
 redis:
   user:
     Addr: "localhost:6379"
@@ -40,4 +43,6 @@ mysql:
     database: "chatbot"
     charset: "utf8mb4"
 openai:
-  secretKey: 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
+  secretKey: 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
+  hitRate: 90
+

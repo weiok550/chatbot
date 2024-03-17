@@ -14,17 +14,15 @@ var Cfg *viper.Viper
 func init() {
 	var configFile string
 	var env string
-	envPtr := flag.String("env", "prod", "program run env mode")
+	envPtr := flag.String("env", "release", "program run env mode")
 	flag.Parse()
-	fmt.Printf("当前env:%s", *envPtr)
 	switch *envPtr {
-	case "debug":
-	case "test":
-	case "release":
+	case "debug", "test", "release" :
 		env = *envPtr
 	default:
-		env = "debug"
+		env = "release"
 	}
+	fmt.Printf("当前env:%s", env)
 	configFile = fmt.Sprintf("./config/config-%s.yaml", env)
 
 	Cfg = viper.New()
@@ -48,6 +46,7 @@ func init() {
 		if err != nil {
 			fmt.Println("Error reading config file:", err)
 		}
+		fmt.Println("openai key: ",global.Cfg.GetString("openai.secretKey"))
 	})
 }
 

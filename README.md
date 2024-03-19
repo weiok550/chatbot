@@ -1,5 +1,5 @@
 # chatbot
-聊天机器人，一个面试作业
+聊天机器人
 
 ## 功能概述
 - 前端【实现】
@@ -64,59 +64,9 @@
 - 存储及服务均可分布式部署，可以水平扩展
 - 随着业务规模扩大可以针对每个服务单独拆分部署 + rpc调用改造
 
-## 业务流程
-- todo
 
 ## 线上体验
 - https://chatbot.putianxia.fun
 - 用户名:neo1 密码:123456
 
-## 附件[作业要求]
 
-```
-Messaging Platform: Review Bot
-Instructions
-Hello! We are excited to share this take-home assignment with you. Please read the problem
-statement below and raise questions if any. We are happy to clarify over email or a quick call.
-Please try to get back to us in a week. After your solution is ready, please share it with us and
-schedule a 1-hour meeting to discuss your solution.
-Overview
-It is challenging for SMBs to leverage the tooling available for all the large companies, due to a
-fundamental constraint in resources. As a few-person SMB you want to be focusing on
-operations and providing excellent service to customers. We want to help them by providing
-these services through the most ubiquitous tech platform available: Messaging.
-As part of this exercise assume that your system is integrated with a 3rd party messaging
-platform and build a basic chatbot that allows an SMB to gather personal reviews from
-customers. The chatbot should be triggered based on some conditions/context. (E.g. recently
-completed transaction outside the thread, Thank you notes inside the thread), select the right
-template to send to the customer and manage/store the response.
-You should structure your code so that it's testable and also take care to properly handle errors
-returned from downstream dependencies (or other errors like timeouts) and fallback graciously.
-We are not looking for exact coverage numbers, but your testing philosophy should be
-represented in your coding decisions. Your code should also be designed to be deployable in a
-PaaS provider (heroku or AWS Lambda or other services), but also able to run in a development
-machine. You can use a container to create a deployable image as well.
-You will be required to show a working demo of the chatbot during the live interview. You can
-showcase the bot functionality either through Postman API calls, a simple web UI or use a real
-API.
-Expect to spend 4 ~ 5 hours on this exercise. Plan accordingly and use a simple architecture to
-maximize your output. Feel free to mock any downstream dependencies that you would
-consider utilizing.
-Details
-Take a look into the Telegram documentation to draw inspiration about how a 3rd party
-messaging platform api is structured. You may hook up to the real api to make your bot more
-engaging, but may also choose to simulate the 3rd party provider.
-Some Principles
-Use What You Know: We’re looking to see you performing your best work, so feel free to use
-the frameworks that you are most comfortable with. Our backend tech stack is based on Go and
-Python so we prefer to see your work in either of those 2 programming languages.
-Showcase Your Strengths: As you’re working on your bot, focus your time and energy on your
-areas of expertise. If you’re a great architect, focus on that. If you’re good at building UX, focus
-on that. If you’re strong in ML, showcase that. We want to see what you’re best at.
-Pair Programming Interview
-When we meet for the pair programming interview you will be asked to demo the basic
-requirements outlined above and we will work to add some more functionality to your
-application, so please don’t build more features than we outline here! During the interview we
-will also ask you about architecture choices you made while building the bot. Be prepared to
-answer these questions as they come up.
-```
